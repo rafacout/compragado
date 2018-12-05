@@ -1,5 +1,4 @@
-﻿
-namespace Marfrig.CompraGado.Domain.Entities
+﻿namespace Marfrig.CompraGado.Domain.Entities
 {
     public class Animal
     {

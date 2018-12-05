@@ -1,4 +1,6 @@
-﻿using Marfrig.CompraGado.Data.Context;
+﻿using Marfrig.CompraGado.Application.Application;
+using Marfrig.CompraGado.Application.Interfaces;
+using Marfrig.CompraGado.Data.Context;
 using Marfrig.CompraGado.Data.Repositories;
 using Marfrig.CompraGado.Domain.Interfaces.Repositories;
 using Marfrig.CompraGado.Domain.Interfaces.Services;
@@ -18,10 +20,8 @@ namespace Marfrig.CompraGado.IoC
 
         private static void ConfigureApplication(Container container)
         {
-            //container.Register<IUserApplication, UserApplication>(Lifestyle.Scoped);
-            //container.Register<IProjectApplication, ProjectApplication>(Lifestyle.Scoped);
-            //container.Register<IIssueApplication, IssueApplication>(Lifestyle.Scoped);
-            //container.Register<IWebHookApplication, WebHookApplication>(Lifestyle.Scoped);
+            container.Register<IAnimalApplication, AnimalApplication>(Lifestyle.Scoped);
+            container.Register<IPecuaristaApplication, PecuaristaApplication>(Lifestyle.Scoped);
 
             container.Register<IAnimalRepository, AnimalRepository>(Lifestyle.Scoped);
             container.Register<IPecuaristaRepository, PecuaristaRepository>(Lifestyle.Scoped);

@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marfrig.CompraGado.API", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marfrig.CompraGado.IoC", "Marfrig.CompraGado.IoC\Marfrig.CompraGado.IoC.csproj", "{B39A24EC-5CF5-4CE3-8F03-A70CEF530CFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marfrig.CompraGado.Application", "Marfrig.CompraGado.Application\Marfrig.CompraGado.Application.csproj", "{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{B39A24EC-5CF5-4CE3-8F03-A70CEF530CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B39A24EC-5CF5-4CE3-8F03-A70CEF530CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B39A24EC-5CF5-4CE3-8F03-A70CEF530CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{D1EFB312-C457-4349-8474-5BA4EC8C9BC3} = {E776B117-EC6C-48D3-B234-2F41A07258D1}
 		{41B7ADCA-D61A-43B6-95D3-6EAA820752B6} = {EB75A70C-138C-4CE9-ACE5-D6B22625C93E}
 		{B39A24EC-5CF5-4CE3-8F03-A70CEF530CFB} = {E776B117-EC6C-48D3-B234-2F41A07258D1}
+		{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42} = {92DB3074-0EC0-45F3-B189-7DE2DCD7A9E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {873983B9-BE5C-452A-B7AD-D614862FB764}

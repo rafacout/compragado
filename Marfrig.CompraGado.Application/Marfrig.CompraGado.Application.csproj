@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B39A24EC-5CF5-4CE3-8F03-A70CEF530CFB}</ProjectGuid>
+    <ProjectGuid>{0ABB4CCF-B9F0-4AFF-8A85-F8A6DDE52E42}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Marfrig.CompraGado.IoC</RootNamespace>
-    <AssemblyName>Marfrig.CompraGado.IoC</AssemblyName>
+    <RootNamespace>Marfrig.CompraGado.Application</RootNamespace>
+    <AssemblyName>Marfrig.CompraGado.Application</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimpleInjector, Version=4.4.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.4.4.2\lib\net45\SimpleInjector.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,21 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IoCConfiguration.cs" />
+    <Compile Include="Application\PecuaristaApplication.cs" />
+    <Compile Include="Application\AnimalApplication.cs" />
+    <Compile Include="Application\ApplicationBase.cs" />
+    <Compile Include="Interfaces\IPecuaristaApplication.cs" />
+    <Compile Include="Interfaces\IAnimalApplication.cs" />
+    <Compile Include="Interfaces\IApplicationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Marfrig.CompraGado.Application\Marfrig.CompraGado.Application.csproj">
-      <Project>{0abb4ccf-b9f0-4aff-8a85-f8a6dde52e42}</Project>
-      <Name>Marfrig.CompraGado.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Marfrig.CompraGado.Data\Marfrig.CompraGado.Data.csproj">
-      <Project>{d1efb312-c457-4349-8474-5ba4ec8c9bc3}</Project>
-      <Name>Marfrig.CompraGado.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Marfrig.CompraGado.Domain\Marfrig.CompraGado.Domain.csproj">
       <Project>{fee4c342-4d64-412b-b472-621d86262beb}</Project>
       <Name>Marfrig.CompraGado.Domain</Name>

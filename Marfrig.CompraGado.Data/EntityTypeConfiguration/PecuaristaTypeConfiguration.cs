@@ -13,7 +13,8 @@ namespace Marfrig.CompraGado.Data.EntityTypeConfiguration
 
             Property(c => c.Nome)
                 .IsRequired()
-                .HasMaxLength(1000);
+                .HasColumnType("varchar")
+                .HasMaxLength(100);
         }
     }
 }

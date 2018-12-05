@@ -6,7 +6,7 @@
 
         public string Descricao { get; set; }
 
-        public float Preco { get; set; }
+        public decimal Preco { get; set; }
 
     }
 }

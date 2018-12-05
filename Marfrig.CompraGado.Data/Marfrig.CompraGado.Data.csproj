@@ -51,10 +51,26 @@
     <Compile Include="EntityTypeConfiguration\AnimalTypeConfiguration.cs" />
     <Compile Include="Context\MarfrigContext.cs" />
     <Compile Include="EntityTypeConfiguration\PecuaristaTypeConfiguration.cs" />
+    <Compile Include="Migrations\201812052110305_Initial.cs" />
+    <Compile Include="Migrations\201812052110305_Initial.Designer.cs">
+      <DependentUpon>201812052110305_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812052127300_FieldsAdjustments.cs" />
+    <Compile Include="Migrations\201812052127300_FieldsAdjustments.Designer.cs">
+      <DependentUpon>201812052127300_FieldsAdjustments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812052110305_Initial.resx">
+      <DependentUpon>201812052110305_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812052127300_FieldsAdjustments.resx">
+      <DependentUpon>201812052127300_FieldsAdjustments.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marfrig.CompraGado.Domain\Marfrig.CompraGado.Domain.csproj">
       <Project>{fee4c342-4d64-412b-b472-621d86262beb}</Project>

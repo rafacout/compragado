@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{0B906CAE-5636-4150-9F05-F1E052D4F454}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API Service", "1 - API Service", "{EB75A70C-138C-4CE9-ACE5-D6B22625C93E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - UI", "0 - UI", "{D351C206-0F84-48BE-B298-EEC0782AF3F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{92DB3074-0EC0-45F3-B189-7DE2DCD7A9E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{E776B117-EC6C-48D3-B234-2F41A07258D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 - Tests", "9 - Tests", "{F1036A64-241A-4CD1-AA18-3CF6BA182510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marfrig.CompraGado.Domain", "Marfrig.CompraGado.Domain\Marfrig.CompraGado.Domain.csproj", "{FEE4C342-4D64-412B-B472-621D86262BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marfrig.CompraGado.Data", "Marfrig.CompraGado.Data\Marfrig.CompraGado.Data.csproj", "{D1EFB312-C457-4349-8474-5BA4EC8C9BC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEE4C342-4D64-412B-B472-621D86262BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE4C342-4D64-412B-B472-621D86262BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE4C342-4D64-412B-B472-621D86262BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE4C342-4D64-412B-B472-621D86262BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1EFB312-C457-4349-8474-5BA4EC8C9BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1EFB312-C457-4349-8474-5BA4EC8C9BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1EFB312-C457-4349-8474-5BA4EC8C9BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1EFB312-C457-4349-8474-5BA4EC8C9BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FEE4C342-4D64-412B-B472-621D86262BEB} = {0B906CAE-5636-4150-9F05-F1E052D4F454}
+		{D1EFB312-C457-4349-8474-5BA4EC8C9BC3} = {E776B117-EC6C-48D3-B234-2F41A07258D1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {873983B9-BE5C-452A-B7AD-D614862FB764}
+	EndGlobalSection
+EndGlobal

@@ -10,8 +10,6 @@
 
         public int AnimalId { get; set; }
 
-        public CompraGadoViewModel CompraGado { get; set; }
-
         public AnimalViewModel Animal { get; set; }
     }
 }

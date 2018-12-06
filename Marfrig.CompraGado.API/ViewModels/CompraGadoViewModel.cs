@@ -16,6 +16,8 @@ namespace Marfrig.CompraGado.API.ViewModels
 
         public int PecuaristaId { get; set; }
 
+        public decimal ValorTotal { get; set; }
+
         public List<CompraGadoItemViewModel> CompraGadoItens { get; set; }
 
         public PecuaristaViewModel Pecuarista { get; set; }

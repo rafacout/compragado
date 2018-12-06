@@ -16,6 +16,8 @@ namespace Marfrig.CompraGado.Domain.Entities
 
         public int PecuaristaId { get; set; }
 
+        public decimal ValorTotal { get; set; }
+
         public List<CompraGadoItem> CompraGadoItens { get; set; }
 
         public Pecuarista Pecuarista { get; set; }

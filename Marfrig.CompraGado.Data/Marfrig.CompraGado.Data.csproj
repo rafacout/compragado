@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201812061815541_QuantidadeDecimal.Designer.cs">
       <DependentUpon>201812061815541_QuantidadeDecimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812062026526_Types.cs" />
+    <Compile Include="Migrations\201812062026526_Types.Designer.cs">
+      <DependentUpon>201812062026526_Types.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CompraGadoRepository.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812061815541_QuantidadeDecimal.resx">
       <DependentUpon>201812061815541_QuantidadeDecimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812062026526_Types.resx">
+      <DependentUpon>201812062026526_Types.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -44,7 +47,14 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.dgCompraGado = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compraGadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.compraGadoItensBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPesquisar
@@ -178,11 +188,60 @@
             // 
             // dgCompraGado
             // 
+            this.dgCompraGado.AllowUserToAddRows = false;
+            this.dgCompraGado.AllowUserToDeleteRows = false;
+            this.dgCompraGado.AllowUserToResizeRows = false;
+            this.dgCompraGado.AutoGenerateColumns = false;
+            this.dgCompraGado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgCompraGado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCompraGado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dataEntregaDataGridViewTextBoxColumn,
+            this.valorTotalDataGridViewTextBoxColumn});
+            this.dgCompraGado.DataSource = this.compraGadoBindingSource;
             this.dgCompraGado.Location = new System.Drawing.Point(15, 160);
+            this.dgCompraGado.MultiSelect = false;
             this.dgCompraGado.Name = "dgCompraGado";
+            this.dgCompraGado.ReadOnly = true;
+            this.dgCompraGado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgCompraGado.Size = new System.Drawing.Size(773, 226);
             this.dgCompraGado.TabIndex = 17;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // compraGadoBindingSource
+            // 
+            this.compraGadoBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.CompraGado);
+            // 
+            // compraGadoItensBindingSource
+            // 
+            this.compraGadoItensBindingSource.DataMember = "CompraGadoItens";
+            this.compraGadoItensBindingSource.DataSource = this.compraGadoBindingSource;
+            // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
+            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataEntregaDataGridViewTextBoxColumn
+            // 
+            this.dataEntregaDataGridViewTextBoxColumn.DataPropertyName = "DataEntrega";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataEntregaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataEntregaDataGridViewTextBoxColumn.HeaderText = "Data Entrega";
+            this.dataEntregaDataGridViewTextBoxColumn.Name = "dataEntregaDataGridViewTextBoxColumn";
+            this.dataEntregaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ConsultaCompraDeGado
             // 
@@ -208,6 +267,8 @@
             this.Name = "ConsultaCompraDeGado";
             this.Text = "Consulta de Compra de Gado";
             ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +292,11 @@
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.DataGridView dgCompraGado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pecuaristaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource compraGadoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataEntregaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource compraGadoItensBindingSource;
     }
 }

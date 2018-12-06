@@ -20,7 +20,9 @@ namespace Marfrig.CompraGado.API.Controllers
 
         public IHttpActionResult Get()
         {
-            var compraGados = Mapper.Map<IEnumerable<Domain.Entities.CompraGado>, IEnumerable<CompraGadoViewModel>>(_compraGadoApplication.GetAll());
+            var compraGadosDomain = _compraGadoApplication.GetAll();
+
+            var compraGados = Mapper.Map<IEnumerable<Domain.Entities.CompraGado>, IEnumerable<CompraGadoViewModel>>(compraGadosDomain);
 
             return Ok(compraGados);
         }

@@ -16,6 +16,8 @@ namespace Marfrig.CompraGado.Data.EntityTypeConfiguration
             Property(c => c.DataEntrega)
                 .IsRequired();
 
+            Property(c => c.ValorTotal)
+                .IsRequired();
         }
     }
 }

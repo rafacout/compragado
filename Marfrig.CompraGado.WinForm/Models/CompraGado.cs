@@ -16,6 +16,8 @@ namespace Marfrig.CompraGado.WinForm.Models
 
         public int PecuaristaId { get; set; }
 
+        public decimal ValorTotal { get; set; }
+
         public List<CompraGadoItem> CompraGadoItens { get; set; }
 
         public Pecuarista Pecuarista { get; set; }

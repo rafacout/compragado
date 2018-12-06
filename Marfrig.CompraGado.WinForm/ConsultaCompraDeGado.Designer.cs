@@ -43,8 +43,8 @@
             this.dtpDataAte = new System.Windows.Forms.DateTimePicker();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgCompraGado = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPesquisar
@@ -55,6 +55,7 @@
             this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnImprimir
             // 
@@ -175,20 +176,20 @@
             this.btnProximo.Text = ">";
             this.btnProximo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgCompraGado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 160);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(773, 226);
-            this.dataGridView1.TabIndex = 17;
+            this.dgCompraGado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCompraGado.Location = new System.Drawing.Point(15, 160);
+            this.dgCompraGado.Name = "dgCompraGado";
+            this.dgCompraGado.Size = new System.Drawing.Size(773, 226);
+            this.dgCompraGado.TabIndex = 17;
             // 
             // ConsultaCompraDeGado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgCompraGado);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.dtpDataAte);
@@ -206,7 +207,7 @@
             this.Controls.Add(this.btnPesquisar);
             this.Name = "ConsultaCompraDeGado";
             this.Text = "Consulta de Compra de Gado";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +230,6 @@
         private System.Windows.Forms.DateTimePicker dtpDataAte;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnProximo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgCompraGado;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Marfrig.CompraGado.API.ViewModels;
-using Marfrig.CompraGado.Application.Application;
+using Marfrig.CompraGado.Application.Interfaces;
 using Marfrig.CompraGado.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,9 +10,9 @@ namespace Marfrig.CompraGado.API.Controllers
 {
     public class AnimaisController : ApiController
     {
-        private readonly AnimalApplication _animalApplication;
+        private readonly IAnimalApplication _animalApplication;
 
-        public AnimaisController(AnimalApplication animalApplication)
+        public AnimaisController(IAnimalApplication animalApplication)
         {
             _animalApplication = animalApplication;
         }

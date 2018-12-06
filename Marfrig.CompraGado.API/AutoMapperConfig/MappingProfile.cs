@@ -9,6 +9,8 @@ namespace Marfrig.CompraGado.API.AutoMapperConfig
         {
             CreateMap<Animal, AnimalViewModel>();
             CreateMap<Pecuarista, PecuaristaViewModel>();
+            CreateMap<FiltroCompraGado, FiltroCompraGadoViewModel>();
+            CreateMap<Domain.Entities.CompraGado, CompraGadoViewModel>();
         }
     }
 }

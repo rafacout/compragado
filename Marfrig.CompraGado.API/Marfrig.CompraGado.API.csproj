@@ -160,6 +160,7 @@
     <Compile Include="ViewModels\CompraGadoViewModel.cs" />
     <Compile Include="ViewModels\AnimalViewModel.cs" />
     <Compile Include="ViewModels\CompraGadoItemViewModel.cs" />
+    <Compile Include="ViewModels\FiltroCompraGadoViewModel.cs" />
     <Compile Include="ViewModels\PecuaristaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

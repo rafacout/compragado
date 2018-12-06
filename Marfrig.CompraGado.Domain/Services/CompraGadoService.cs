@@ -14,7 +14,6 @@ namespace Marfrig.CompraGado.Domain.Services
             _animalRepository = animalRepository;
         }
 
-
         public void Add(Entities.CompraGado obj)
         {
             _animalRepository.Add(obj);
@@ -40,5 +39,9 @@ namespace Marfrig.CompraGado.Domain.Services
             _animalRepository.Remove(obj);
         }
 
+        public IEnumerable<Entities.CompraGado> GetByFilter(FiltroCompraGado filtro)
+        {
+            return _animalRepository.GetByFilter(filtro);
+        }
     }
 }

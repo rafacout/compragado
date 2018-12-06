@@ -18,9 +18,11 @@ namespace Marfrig.CompraGado.API.Controllers
         }
 
 
-        public IHttpActionResult Get()
+        public IHttpActionResult Get([FromUri]FiltroCompraGadoViewModel filtros)
         {
-            var compraGadosDomain = _compraGadoApplication.GetAll();
+            var filtersDomain = Mapper.Map<FiltroCompraGadoViewModel, FiltroCompraGado>(filtros);
+
+            var compraGadosDomain = _compraGadoApplication.GetByFilter(filtersDomain);
 
             var compraGados = Mapper.Map<IEnumerable<Domain.Entities.CompraGado>, IEnumerable<CompraGadoViewModel>>(compraGadosDomain);
 

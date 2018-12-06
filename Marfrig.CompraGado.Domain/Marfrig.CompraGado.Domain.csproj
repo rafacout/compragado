@@ -34,6 +34,7 @@
     <Compile Include="Entities\Animal.cs" />
     <Compile Include="Entities\CompraGado.cs" />
     <Compile Include="Entities\CompraGadoItem.cs" />
+    <Compile Include="Entities\FiltroCompraGado.cs" />
     <Compile Include="Entities\Pecuarista.cs" />
     <Compile Include="Interfaces\Repositories\ICompraGadoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IAnimalRepository.cs" />

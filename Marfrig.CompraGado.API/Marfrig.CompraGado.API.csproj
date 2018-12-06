@@ -150,13 +150,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="AutoMapperConfig\AutoMapperExtensions.cs" />
     <Compile Include="AutoMapperConfig\MappingProfile.cs" />
+    <Compile Include="Controllers\CompraGadosController.cs" />
     <Compile Include="Controllers\PecuaristasController.cs" />
     <Compile Include="Controllers\AnimaisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CompraGadoViewModel.cs" />
     <Compile Include="ViewModels\AnimalViewModel.cs" />
+    <Compile Include="ViewModels\CompraGadoItemViewModel.cs" />
     <Compile Include="ViewModels\PecuaristaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

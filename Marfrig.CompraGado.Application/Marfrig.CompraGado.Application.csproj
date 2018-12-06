@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\CompraGadoApplication.cs" />
     <Compile Include="Application\PecuaristaApplication.cs" />
     <Compile Include="Application\AnimalApplication.cs" />
     <Compile Include="Application\ApplicationBase.cs" />
+    <Compile Include="Interfaces\ICompraGadoApplication.cs" />
     <Compile Include="Interfaces\IPecuaristaApplication.cs" />
     <Compile Include="Interfaces\IAnimalApplication.cs" />
     <Compile Include="Interfaces\IApplicationBase.cs" />

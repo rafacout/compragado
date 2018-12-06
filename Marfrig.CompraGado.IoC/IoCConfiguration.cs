@@ -22,9 +22,11 @@ namespace Marfrig.CompraGado.IoC
         {
             container.Register<IAnimalApplication, AnimalApplication>(Lifestyle.Scoped);
             container.Register<IPecuaristaApplication, PecuaristaApplication>(Lifestyle.Scoped);
+            container.Register<ICompraGadoApplication, CompraGadoApplication>(Lifestyle.Scoped);
 
             container.Register<IAnimalRepository, AnimalRepository>(Lifestyle.Scoped);
             container.Register<IPecuaristaRepository, PecuaristaRepository>(Lifestyle.Scoped);
+            container.Register<ICompraGadoRepository, CompraGadoRepository>(Lifestyle.Scoped);
         }
 
         private static void ConfigureData(Container container)
@@ -36,6 +38,7 @@ namespace Marfrig.CompraGado.IoC
         {
             services.Register<IAnimalService, AnimalService>(Lifestyle.Scoped);
             services.Register<IPecuaristaService, PecuaristaService>(Lifestyle.Scoped);
+            services.Register<ICompraGadoService, CompraGadoService>(Lifestyle.Scoped);
         }
     }
 }

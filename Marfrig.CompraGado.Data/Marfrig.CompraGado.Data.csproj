@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityTypeConfiguration\CompraGadoItemTypeConfiguration.cs" />
+    <Compile Include="EntityTypeConfiguration\CompraGadoTypeConfiguration.cs" />
     <Compile Include="EntityTypeConfiguration\AnimalTypeConfiguration.cs" />
     <Compile Include="Context\MarfrigContext.cs" />
     <Compile Include="EntityTypeConfiguration\PecuaristaTypeConfiguration.cs" />
@@ -59,8 +61,17 @@
     <Compile Include="Migrations\201812052127300_FieldsAdjustments.Designer.cs">
       <DependentUpon>201812052127300_FieldsAdjustments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812061813176_CompraGado.cs" />
+    <Compile Include="Migrations\201812061813176_CompraGado.Designer.cs">
+      <DependentUpon>201812061813176_CompraGado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061815541_QuantidadeDecimal.cs" />
+    <Compile Include="Migrations\201812061815541_QuantidadeDecimal.Designer.cs">
+      <DependentUpon>201812061815541_QuantidadeDecimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CompraGadoRepository.cs" />
     <Compile Include="Repositories\PecuaristaRepository.cs" />
     <Compile Include="Repositories\AnimalRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
@@ -71,6 +82,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812052127300_FieldsAdjustments.resx">
       <DependentUpon>201812052127300_FieldsAdjustments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061813176_CompraGado.resx">
+      <DependentUpon>201812061813176_CompraGado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061815541_QuantidadeDecimal.resx">
+      <DependentUpon>201812061815541_QuantidadeDecimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

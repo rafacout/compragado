@@ -67,7 +67,7 @@ namespace Marfrig.CompraGado.API.Controllers
             }
         }
 
-        public IHttpActionResult Put(int id, [FromBody]PecuaristaViewModel pecuarista)
+        public IHttpActionResult Put([FromBody]PecuaristaViewModel pecuarista)
         {
             try
             {

@@ -11,6 +11,10 @@ namespace Marfrig.CompraGado.Data.Context
 
         public DbSet<Pecuarista> Pecuaristas { get; set; }
 
+        public DbSet<Domain.Entities.CompraGado> CompraGados { get; set; }
+
+        public DbSet<CompraGadoItem> CompraGadoItens { get; set; }
+
 
         public MarfrigContext() : base("name=DefaultConnection")
         {
@@ -24,6 +28,8 @@ namespace Marfrig.CompraGado.Data.Context
 
             modelBuilder.Configurations.Add(new AnimalTypeConfiguration());
             modelBuilder.Configurations.Add(new PecuaristaTypeConfiguration());
+            modelBuilder.Configurations.Add(new CompraGadoTypeConfiguration());
+            modelBuilder.Configurations.Add(new CompraGadoItemTypeConfiguration());
         }
 
     }

@@ -6,7 +6,7 @@
 
         public int CompraGadoId { get; set; }
 
-        public float Quantidade { get; set; }
+        public decimal Quantidade { get; set; }
 
         public int AnimalId { get; set; }
 

@@ -35,13 +35,16 @@
     <Compile Include="Entities\CompraGado.cs" />
     <Compile Include="Entities\CompraGadoItem.cs" />
     <Compile Include="Entities\Pecuarista.cs" />
+    <Compile Include="Interfaces\Repositories\ICompraGadoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IAnimalRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPecuaristaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Services\ICompraGadoService.cs" />
     <Compile Include="Interfaces\Services\IPecuaristaService.cs" />
     <Compile Include="Interfaces\Services\IAnimalService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CompraGadoService.cs" />
     <Compile Include="Services\PecuaristaService.cs" />
     <Compile Include="Services\AnimalService.cs" />
     <Compile Include="Services\ServiceBase.cs" />

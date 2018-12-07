@@ -127,11 +127,14 @@ namespace Marfrig.CompraGado.WinForm
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            var item = (Models.CompraGado)dgCompraGado.SelectedRows[0].DataBoundItem;
+            if (dgCompraGado.SelectedRows.Count > 0)
+            {
+                var item = (Models.CompraGado)dgCompraGado.SelectedRows[0].DataBoundItem;
 
-            EditarCompraDeGado form = new EditarCompraDeGado(item);
+                EditarCompraDeGado form = new EditarCompraDeGado(item);
 
-            form.ShowDialog();
+                form.ShowDialog();
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

@@ -75,5 +75,39 @@ namespace Marfrig.CompraGado.WinForm
         {
             this.Close();
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            EditarItem form = new EditarItem(new Models.CompraGadoItem() { Id = 0 });
+
+            form.ShowDialog();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (dgItens.SelectedRows.Count > 0)
+            {
+                var item = (Models.CompraGadoItem)dgItens.SelectedRows[0].DataBoundItem;
+
+                EditarItem form = new EditarItem(item);
+
+                form.ShowDialog();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgItens.SelectedRows.Count > 0)
+            {
+                Models.CompraGadoItem item = (Models.CompraGadoItem)dgItens.SelectedRows[0].DataBoundItem;
+
+                DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir o Item?", "Atenção", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                }
+            }
+        }
     }
 }

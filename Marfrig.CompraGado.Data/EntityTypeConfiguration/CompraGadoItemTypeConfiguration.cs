@@ -19,6 +19,9 @@ namespace Marfrig.CompraGado.Data.EntityTypeConfiguration
             Property(c => c.Quantidade)
                 .IsRequired();
 
+            Property(c => c.ValorTotal)
+                .IsRequired();
+
             //Configuracao do relacionamento
             HasRequired(p => p.CompraGado)
                 .WithMany(i => i.CompraGadoItens)

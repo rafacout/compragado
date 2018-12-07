@@ -10,6 +10,8 @@
 
         public int AnimalId { get; set; }
 
+        public decimal ValorTotal { get; set; }
+
         public AnimalViewModel Animal { get; set; }
     }
 }

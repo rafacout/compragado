@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompraDeGado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraDeGado.Designer.cs">
+      <DependentUpon>CompraDeGado.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaCompraDeGado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Models\Pecuarista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CompraDeGado.resx">
+      <DependentUpon>CompraDeGado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaCompraDeGado.resx">
       <DependentUpon>ConsultaCompraDeGado.cs</DependentUpon>
     </EmbeddedResource>

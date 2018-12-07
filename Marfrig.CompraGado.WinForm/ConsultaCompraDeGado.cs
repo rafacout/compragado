@@ -116,5 +116,34 @@ namespace Marfrig.CompraGado.WinForm
         {
             popularPecuarista();
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            var teste = new Models.CompraGado()
+            {
+                Id = 1,
+                DataEntrega = DateTime.Now,
+                PecuaristaId = 2,
+                ValorTotal = (Decimal)1000.99
+            };
+
+            teste.CompraGadoItens.Add(new Models.CompraGadoItem() {
+                Id = 1,
+                Quantidade = 2
+            });
+
+            CompraDeGado form = new CompraDeGado(teste);
+
+            form.ShowDialog();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            var item = (Models.CompraGado)dgCompraGado.SelectedRows[0].DataBoundItem;
+
+            CompraDeGado form = new CompraDeGado(item);
+
+            form.ShowDialog();
+        }
     }
 }

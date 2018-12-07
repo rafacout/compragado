@@ -115,6 +115,7 @@ namespace Marfrig.CompraGado.WinForm
         private void ConsultaCompraDeGado_Load(object sender, EventArgs e)
         {
             popularPecuarista();
+            pesquisarCompraGado();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -127,7 +128,8 @@ namespace Marfrig.CompraGado.WinForm
                 ValorTotal = (Decimal)1000.99
             };
 
-            teste.CompraGadoItens.Add(new Models.CompraGadoItem() {
+            teste.CompraGadoItens.Add(new Models.CompraGadoItem()
+            {
                 Id = 1,
                 Quantidade = 2
             });
@@ -142,6 +144,30 @@ namespace Marfrig.CompraGado.WinForm
             var item = (Models.CompraGado)dgCompraGado.SelectedRows[0].DataBoundItem;
 
             CompraDeGado form = new CompraDeGado(item);
+
+            form.ShowDialog();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgCompraGado.SelectedRows.Count > 0)
+            {
+                Models.CompraGado item = (Models.CompraGado)dgCompraGado.SelectedRows[0].DataBoundItem;
+
+                DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir a Compra?", "Atenção", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                }
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            var item = (Models.CompraGado)dgCompraGado.SelectedRows[0].DataBoundItem;
+
+            ImprimirCompra form = new ImprimirCompra(item);
 
             form.ShowDialog();
         }

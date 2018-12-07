@@ -41,6 +41,8 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.dtpDataEntrega = new System.Windows.Forms.DateTimePicker();
             this.cmbPecuarista = new System.Windows.Forms.ComboBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.ctnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItens)).BeginInit();
             this.SuspendLayout();
@@ -145,6 +147,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(150, 53);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 4;
             // 
@@ -165,11 +168,31 @@
             this.cmbPecuarista.Size = new System.Drawing.Size(215, 21);
             this.cmbPecuarista.TabIndex = 15;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(295, 415);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 16;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // ctnCancelar
+            // 
+            this.ctnCancelar.Location = new System.Drawing.Point(386, 415);
+            this.ctnCancelar.Name = "ctnCancelar";
+            this.ctnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.ctnCancelar.TabIndex = 17;
+            this.ctnCancelar.Text = "Cancelar";
+            this.ctnCancelar.UseVisualStyleBackColor = true;
+            // 
             // CompraDeGado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ctnCancelar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbPecuarista);
             this.Controls.Add(this.dtpDataEntrega);
             this.Controls.Add(this.txtId);
@@ -203,5 +226,7 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DateTimePicker dtpDataEntrega;
         private System.Windows.Forms.ComboBox cmbPecuarista;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button ctnCancelar;
     }
 }

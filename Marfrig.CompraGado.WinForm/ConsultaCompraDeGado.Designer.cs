@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -47,18 +47,18 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.dgCompraGado = new System.Windows.Forms.DataGridView();
-            this.compraGadoItensBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtPagina = new System.Windows.Forms.TextBox();
-            this.txtRegistrosPorPagina = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compraGadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.compraGadoItensBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtPagina = new System.Windows.Forms.TextBox();
+            this.txtRegistrosPorPagina = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pecuaristaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pecuaristaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,7 @@
             this.btnImprimir.TabIndex = 1;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnAdicionar
             // 
@@ -109,6 +110,7 @@
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // label1
             // 
@@ -220,6 +222,37 @@
             this.dgCompraGado.Size = new System.Drawing.Size(773, 253);
             this.dgCompraGado.TabIndex = 17;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataEntregaDataGridViewTextBoxColumn
+            // 
+            this.dataEntregaDataGridViewTextBoxColumn.DataPropertyName = "DataEntrega";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataEntregaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataEntregaDataGridViewTextBoxColumn.HeaderText = "Data Entrega";
+            this.dataEntregaDataGridViewTextBoxColumn.Name = "dataEntregaDataGridViewTextBoxColumn";
+            this.dataEntregaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
+            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // compraGadoBindingSource
+            // 
+            this.compraGadoBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.CompraGado);
+            // 
             // compraGadoItensBindingSource
             // 
             this.compraGadoItensBindingSource.DataMember = "CompraGadoItens";
@@ -254,37 +287,6 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Registros por página";
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataEntregaDataGridViewTextBoxColumn
-            // 
-            this.dataEntregaDataGridViewTextBoxColumn.DataPropertyName = "DataEntrega";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataEntregaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataEntregaDataGridViewTextBoxColumn.HeaderText = "Data Entrega";
-            this.dataEntregaDataGridViewTextBoxColumn.Name = "dataEntregaDataGridViewTextBoxColumn";
-            this.dataEntregaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valorTotalDataGridViewTextBoxColumn
-            // 
-            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
-            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
-            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // compraGadoBindingSource
-            // 
-            this.compraGadoBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.CompraGado);
-            // 
             // pecuaristaBindingSource
             // 
             this.pecuaristaBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.Pecuarista);
@@ -317,8 +319,8 @@
             this.Text = "Consulta de Compra de Gado";
             this.Load += new System.EventHandler(this.ConsultaCompraDeGado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pecuaristaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

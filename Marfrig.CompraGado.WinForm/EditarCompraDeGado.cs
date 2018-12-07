@@ -12,16 +12,16 @@ using System.Windows.Forms;
 
 namespace Marfrig.CompraGado.WinForm
 {
-    public partial class CompraDeGado : Form
+    public partial class EditarCompraDeGado : Form
     {
         private Models.CompraGado _compraGado;
 
-        public CompraDeGado()
+        public EditarCompraDeGado()
         {
             InitializeComponent();
         }
 
-        public CompraDeGado(Models.CompraGado compra)
+        public EditarCompraDeGado(Models.CompraGado compra)
         {
             _compraGado = compra;
             InitializeComponent();
@@ -64,6 +64,16 @@ namespace Marfrig.CompraGado.WinForm
                     }
                 }
             }
+        }
+
+        private void ctnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

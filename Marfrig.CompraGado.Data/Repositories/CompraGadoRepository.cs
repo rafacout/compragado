@@ -2,8 +2,8 @@
 using Marfrig.CompraGado.Domain.Entities;
 using Marfrig.CompraGado.Domain.Interfaces.Repositories;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data.Entity;
+using System.Linq;
 
 namespace Marfrig.CompraGado.Data.Repositories
 {
@@ -35,22 +35,35 @@ namespace Marfrig.CompraGado.Data.Repositories
 
         public IEnumerable<Domain.Entities.CompraGado> GetByFilter(FiltroCompraGado filtro)
         {
-            IQueryable<Domain.Entities.CompraGado> compraGados = null;
-
             var query = _context.CompraGados
                         .Include("Pecuarista")
                         .Include("CompraGadoItens")
-                        .Include("CompraGadoItens.Animal");
+                        .Include("CompraGadoItens.Animal")
+                        .AsEnumerable();
 
             if (filtro.PecuaristaId > 0)
-                compraGados = query.Where(a => a.PecuaristaId == filtro.PecuaristaId);
+                query = query.Where(a => a.PecuaristaId == filtro.PecuaristaId);
 
-            return compraGados.ToList();
+            if (filtro.DataDe.HasValue)
+                query = query.Where(a => a.DataEntrega >= filtro.DataDe);
+
+            if (filtro.DataAte.HasValue)
+                query = query.Where(a => a.DataEntrega <= filtro.DataAte);
+
+            if (filtro.RegistrosPorPagina > 0)
+                query = query.Skip(filtro.Pagina * filtro.RegistrosPorPagina).Take(filtro.RegistrosPorPagina);
+
+            return query.ToList();
         }
 
         public Domain.Entities.CompraGado GetById(long id)
         {
-            return _context.CompraGados.Find(id);
+            return _context.CompraGados
+                        .Include("Pecuarista")
+                        .Include("CompraGadoItens")
+                        .Include("CompraGadoItens.Animal")
+                        .Where(a => a.Id == id)
+                        .FirstOrDefault();
         }
 
         public void Remove(Domain.Entities.CompraGado obj)

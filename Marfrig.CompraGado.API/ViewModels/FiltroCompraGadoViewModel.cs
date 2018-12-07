@@ -11,5 +11,7 @@ namespace Marfrig.CompraGado.API.ViewModels
         public Nullable<DateTime> DataAte { get; set; }
 
         public int Pagina { get; set; }
+
+        public int RegistrosPorPagina { get; set; }
     }
 }

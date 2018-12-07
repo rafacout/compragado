@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -47,14 +47,19 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.dgCompraGado = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.compraGadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.compraGadoItensBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPagina = new System.Windows.Forms.TextBox();
+            this.txtRegistrosPorPagina = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEntregaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compraGadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pecuaristaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pecuaristaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPesquisar
@@ -151,31 +156,35 @@
             this.cmbPecuarista.FormattingEnabled = true;
             this.cmbPecuarista.Location = new System.Drawing.Point(380, 79);
             this.cmbPecuarista.Name = "cmbPecuarista";
-            this.cmbPecuarista.Size = new System.Drawing.Size(121, 21);
+            this.cmbPecuarista.Size = new System.Drawing.Size(215, 21);
             this.cmbPecuarista.TabIndex = 12;
             // 
             // dtpDataDe
             // 
+            this.dtpDataDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataDe.Location = new System.Drawing.Point(118, 116);
             this.dtpDataDe.Name = "dtpDataDe";
-            this.dtpDataDe.Size = new System.Drawing.Size(200, 20);
+            this.dtpDataDe.Size = new System.Drawing.Size(99, 20);
             this.dtpDataDe.TabIndex = 13;
+            this.dtpDataDe.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // dtpDataAte
             // 
+            this.dtpDataAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataAte.Location = new System.Drawing.Point(380, 116);
             this.dtpDataAte.Name = "dtpDataAte";
-            this.dtpDataAte.Size = new System.Drawing.Size(200, 20);
+            this.dtpDataAte.Size = new System.Drawing.Size(121, 20);
             this.dtpDataAte.TabIndex = 14;
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(369, 415);
+            this.btnAnterior.Location = new System.Drawing.Point(350, 415);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(32, 23);
             this.btnAnterior.TabIndex = 15;
             this.btnAnterior.Text = "<";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnProximo
             // 
@@ -185,6 +194,7 @@
             this.btnProximo.TabIndex = 16;
             this.btnProximo.Text = ">";
             this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // dgCompraGado
             // 
@@ -199,13 +209,47 @@
             this.dataEntregaDataGridViewTextBoxColumn,
             this.valorTotalDataGridViewTextBoxColumn});
             this.dgCompraGado.DataSource = this.compraGadoBindingSource;
-            this.dgCompraGado.Location = new System.Drawing.Point(15, 160);
+            this.dgCompraGado.Location = new System.Drawing.Point(15, 156);
             this.dgCompraGado.MultiSelect = false;
             this.dgCompraGado.Name = "dgCompraGado";
             this.dgCompraGado.ReadOnly = true;
             this.dgCompraGado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgCompraGado.Size = new System.Drawing.Size(773, 226);
+            this.dgCompraGado.Size = new System.Drawing.Size(773, 253);
             this.dgCompraGado.TabIndex = 17;
+            // 
+            // compraGadoItensBindingSource
+            // 
+            this.compraGadoItensBindingSource.DataMember = "CompraGadoItens";
+            this.compraGadoItensBindingSource.DataSource = this.compraGadoBindingSource;
+            // 
+            // txtPagina
+            // 
+            this.txtPagina.Enabled = false;
+            this.txtPagina.Location = new System.Drawing.Point(383, 416);
+            this.txtPagina.Name = "txtPagina";
+            this.txtPagina.Size = new System.Drawing.Size(23, 20);
+            this.txtPagina.TabIndex = 18;
+            this.txtPagina.Text = "1";
+            this.txtPagina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRegistrosPorPagina
+            // 
+            this.txtRegistrosPorPagina.Enabled = false;
+            this.txtRegistrosPorPagina.Location = new System.Drawing.Point(753, 415);
+            this.txtRegistrosPorPagina.Name = "txtRegistrosPorPagina";
+            this.txtRegistrosPorPagina.Size = new System.Drawing.Size(26, 20);
+            this.txtRegistrosPorPagina.TabIndex = 19;
+            this.txtRegistrosPorPagina.Text = "10";
+            this.txtRegistrosPorPagina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(648, 418);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Registros por página";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -213,25 +257,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // compraGadoBindingSource
-            // 
-            this.compraGadoBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.CompraGado);
-            // 
-            // compraGadoItensBindingSource
-            // 
-            this.compraGadoItensBindingSource.DataMember = "CompraGadoItens";
-            this.compraGadoItensBindingSource.DataSource = this.compraGadoBindingSource;
-            // 
-            // valorTotalDataGridViewTextBoxColumn
-            // 
-            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
-            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
-            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataEntregaDataGridViewTextBoxColumn
             // 
@@ -243,11 +268,32 @@
             this.dataEntregaDataGridViewTextBoxColumn.Name = "dataEntregaDataGridViewTextBoxColumn";
             this.dataEntregaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
+            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // compraGadoBindingSource
+            // 
+            this.compraGadoBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.CompraGado);
+            // 
+            // pecuaristaBindingSource
+            // 
+            this.pecuaristaBindingSource.DataSource = typeof(Marfrig.CompraGado.WinForm.Models.Pecuarista);
+            // 
             // ConsultaCompraDeGado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtRegistrosPorPagina);
+            this.Controls.Add(this.txtPagina);
             this.Controls.Add(this.dgCompraGado);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.btnAnterior);
@@ -266,9 +312,11 @@
             this.Controls.Add(this.btnPesquisar);
             this.Name = "ConsultaCompraDeGado";
             this.Text = "Consulta de Compra de Gado";
+            this.Load += new System.EventHandler(this.ConsultaCompraDeGado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCompraGado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraGadoItensBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraGadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pecuaristaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +346,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntregaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource compraGadoItensBindingSource;
+        private System.Windows.Forms.TextBox txtPagina;
+        private System.Windows.Forms.TextBox txtRegistrosPorPagina;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource pecuaristaBindingSource;
     }
 }

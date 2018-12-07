@@ -51,7 +51,7 @@ namespace Marfrig.CompraGado.Data.Repositories
                 query = query.Where(a => a.DataEntrega <= filtro.DataAte);
 
             if (filtro.RegistrosPorPagina > 0)
-                query = query.Skip(filtro.Pagina * filtro.RegistrosPorPagina).Take(filtro.RegistrosPorPagina);
+                query = query.Skip((filtro.Pagina - 1) * filtro.RegistrosPorPagina).Take(filtro.RegistrosPorPagina);
 
             return query.ToList();
         }

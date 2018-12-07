@@ -94,6 +94,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Marfrig.CompraGado.WinForm.Models.CompraGado.datasource" />
+    <None Include="Properties\DataSources\Marfrig.CompraGado.WinForm.Models.Pecuarista.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

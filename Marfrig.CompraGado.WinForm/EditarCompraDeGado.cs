@@ -1,15 +1,12 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Windows.Forms;
 
 namespace Marfrig.CompraGado.WinForm
 {
     public partial class EditarCompraDeGado : Form
     {
-        private Models.CompraGado _compraGado;
+        public Models.CompraGado _compraGado;
 
         public EditarCompraDeGado()
         {
@@ -29,7 +26,10 @@ namespace Marfrig.CompraGado.WinForm
             txtId.Text = _compraGado.Id.ToString();
             dtpDataEntrega.Value = _compraGado.DataEntrega;
             cmbPecuarista.SelectedValue = _compraGado.PecuaristaId;
+        }
 
+        private void popularGrid()
+        {
             dgItens.DataSource = _compraGado.CompraGadoItens;
         }
 
@@ -37,28 +37,11 @@ namespace Marfrig.CompraGado.WinForm
         {
             string url = "http://localhost/Marfrig/api/pecuaristas";
 
-            List<Models.Pecuarista> _pecuaristas = new List<Models.Pecuarista>();
+            List<Models.Pecuarista> _pecuaristas = HttpUtil.GetAll<Models.Pecuarista>(url) ;
 
-            using (var client = new HttpClient())
-            {
-                using (var response = client.GetAsync(url))
-                {
-                    if (response.Result.IsSuccessStatusCode)
-                    {
-                        var fileJsonString = response.Result.Content.ReadAsStringAsync().Result;
-
-                        _pecuaristas = JsonConvert.DeserializeObject<Models.Pecuarista[]>(fileJsonString).ToList();
-
-                        cmbPecuarista.DataSource = _pecuaristas;
-                        cmbPecuarista.DisplayMember = "Nome";
-                        cmbPecuarista.ValueMember = "Id";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocorreu um erro");
-                    }
-                }
-            }
+            cmbPecuarista.DataSource = _pecuaristas;
+            cmbPecuarista.DisplayMember = "Nome";
+            cmbPecuarista.ValueMember = "Id";
         }
 
         private void ctnCancelar_Click(object sender, EventArgs e)
@@ -81,6 +64,15 @@ namespace Marfrig.CompraGado.WinForm
                 return;
             }
 
+            if (_compraGado.Id == 0)
+            {
+                //chamar o post
+            }
+            else
+            {
+                //chamar o put
+            }
+
             this.Close();
         }
 
@@ -88,7 +80,11 @@ namespace Marfrig.CompraGado.WinForm
         {
             EditarItem form = new EditarItem(new Models.CompraGadoItem() { Id = 0 });
 
-            form.ShowDialog();
+            var result = form.ShowDialog();
+
+            _compraGado.CompraGadoItens.Add(form._item);
+
+            popularGrid();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -99,7 +95,11 @@ namespace Marfrig.CompraGado.WinForm
 
                 EditarItem form = new EditarItem(item);
 
-                form.ShowDialog();
+                var result = form.ShowDialog();
+
+                _compraGado.CompraGadoItens.Add(form._item);
+
+                popularGrid();
             }
         }
 

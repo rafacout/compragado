@@ -1,8 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Windows.Forms;
 
 namespace Marfrig.CompraGado.WinForm
@@ -30,65 +27,32 @@ namespace Marfrig.CompraGado.WinForm
 
             string url = "http://localhost/Marfrig/api/compragados";
 
-            string filters = "";
+            string filtro = "";
 
             if (String.IsNullOrEmpty(id))
             {
-                filters = String.Format("?RegistrosPorPagina={0}&pagina={1}&datade={2}&dateate={3}&pecuaristaid={4}",
+                filtro = String.Format("?RegistrosPorPagina={0}&pagina={1}&datade={2}&dateate={3}&pecuaristaid={4}",
                     registrosPorpagina, pagina, dataDe, dataAte, pecuaristaId);
             }
             else
             {
-                filters = String.Format("?id={0}", id);
+                filtro = String.Format("?id={0}", id);
             }
 
+            List<Models.CompraGado> _comprasDeGado = HttpUtil.GetAll<Models.CompraGado>(url + filtro);
 
-            List<Models.CompraGado> _comprasDeGado = new List<Models.CompraGado>();
-
-            using (var client = new HttpClient())
-            {
-                using (var response = client.GetAsync(url + filters))
-                {
-                    if (response.Result.IsSuccessStatusCode)
-                    {
-                        var fileJsonString = response.Result.Content.ReadAsStringAsync().Result;
-
-                        dgCompraGado.DataSource = JsonConvert.DeserializeObject<Models.CompraGado[]>(fileJsonString).ToList();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocorreu um erro");
-                    }
-                }
-            }
+            dgCompraGado.DataSource = _comprasDeGado;
         }
 
         private void popularPecuarista()
         {
             string url = "http://localhost/Marfrig/api/pecuaristas";
 
-            List<Models.Pecuarista> _pecuaristas = new List<Models.Pecuarista>();
+            List<Models.Pecuarista> _pecuaristas = HttpUtil.GetAll<Models.Pecuarista>(url);
 
-            using (var client = new HttpClient())
-            {
-                using (var response = client.GetAsync(url))
-                {
-                    if (response.Result.IsSuccessStatusCode)
-                    {
-                        var fileJsonString = response.Result.Content.ReadAsStringAsync().Result;
-
-                        _pecuaristas = JsonConvert.DeserializeObject<Models.Pecuarista[]>(fileJsonString).ToList();
-
-                        cmbPecuarista.DataSource = _pecuaristas;
-                        cmbPecuarista.DisplayMember = "Nome";
-                        cmbPecuarista.ValueMember = "Id";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocorreu um erro");
-                    }
-                }
-            }
+            cmbPecuarista.DataSource = _pecuaristas;
+            cmbPecuarista.DisplayMember = "Nome";
+            cmbPecuarista.ValueMember = "Id";
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -125,7 +89,9 @@ namespace Marfrig.CompraGado.WinForm
                 DataEntrega = DateTime.Now.AddDays(7)
             });
 
-            form.ShowDialog();
+            var result = form.ShowDialog();
+
+            pesquisarCompraGado();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)

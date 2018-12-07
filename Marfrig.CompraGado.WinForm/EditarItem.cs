@@ -1,22 +1,14 @@
 ﻿using Marfrig.CompraGado.WinForm.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Marfrig.CompraGado.WinForm
 {
     public partial class EditarItem : Form
     {
-        private Models.CompraGadoItem _item;
+        public Models.CompraGadoItem _item;
 
         public EditarItem()
         {
@@ -42,28 +34,11 @@ namespace Marfrig.CompraGado.WinForm
         {
             string url = "http://localhost/Marfrig/api/animais";
 
-            List<Models.Animal> _animal = new List<Models.Animal>();
+            List<Models.Animal> _animal = HttpUtil.GetAll<Models.Animal>(url);
 
-            using (var client = new HttpClient())
-            {
-                using (var response = client.GetAsync(url))
-                {
-                    if (response.Result.IsSuccessStatusCode)
-                    {
-                        var fileJsonString = response.Result.Content.ReadAsStringAsync().Result;
-
-                        _animal = JsonConvert.DeserializeObject<Models.Animal[]>(fileJsonString).ToList();
-
-                        cmbProduto.DataSource = _animal;
-                        cmbProduto.DisplayMember = "Descricao";
-                        cmbProduto.ValueMember = "Id";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocorreu um erro");
-                    }
-                }
-            }
+            cmbProduto.DataSource = _animal;
+            cmbProduto.DisplayMember = "Descricao";
+            cmbProduto.ValueMember = "Id";
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -88,6 +63,11 @@ namespace Marfrig.CompraGado.WinForm
                 txtValorTotal.Focus();
                 return;
             }
+
+            _item.AnimalId = Convert.ToInt32(cmbProduto.SelectedValue);
+            _item.Animal = (Animal)cmbProduto.SelectedItem;
+            _item.Quantidade = Convert.ToDecimal(txtQuantidade.Text, CultureInfo.InvariantCulture);
+            _item.ValorTotal = Convert.ToDecimal(txtValorTotal.Text, CultureInfo.InvariantCulture);
 
             this.Close();
         }

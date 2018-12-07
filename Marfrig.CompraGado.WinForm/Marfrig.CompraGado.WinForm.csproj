@@ -104,6 +104,7 @@
     <Compile Include="EditarItem.Designer.cs">
       <DependentUpon>EditarItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpUtil.cs" />
     <Compile Include="ImprimirCompra.cs">
       <SubType>Form</SubType>
     </Compile>

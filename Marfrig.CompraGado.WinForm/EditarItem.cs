@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Marfrig.CompraGado.WinForm.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -66,12 +68,60 @@ namespace Marfrig.CompraGado.WinForm
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (cmbProduto.SelectedValue == null)
+            {
+                MessageBox.Show("Selecione um Produto!");
+                cmbProduto.Focus();
+                return;
+            }
+
+            if (String.IsNullOrEmpty(txtQuantidade.Text) && txtQuantidade.Text == "0")
+            {
+                MessageBox.Show("Quantidade não pode ser zero");
+                txtQuantidade.Focus();
+                return;
+            }
+
+            if (String.IsNullOrEmpty(txtValorTotal.Text) && txtQuantidade.Text == "0")
+            {
+                MessageBox.Show("Valor total não pode ser zero");
+                txtValorTotal.Focus();
+                return;
+            }
+
             this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbProduto_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var item = (Animal)cmbProduto.SelectedItem;
+
+            txtPreco.Text = item.Preco.ToString("F2", CultureInfo.InvariantCulture);
+
+            calculaTotalItem();
+        }
+
+        private void calculaTotalItem()
+        {
+            decimal quantidade = 0, preco = 0;
+
+            if (!String.IsNullOrEmpty(txtQuantidade.Text))
+                quantidade = Convert.ToDecimal(txtQuantidade.Text, CultureInfo.InvariantCulture);
+
+            if (!String.IsNullOrEmpty(txtPreco.Text))
+                preco = Convert.ToDecimal(txtPreco.Text, CultureInfo.InvariantCulture);
+
+            txtValorTotal.Text = (quantidade * preco).ToString("F2", CultureInfo.InvariantCulture);
+        }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            calculaTotalItem();
         }
     }
 }

@@ -1,13 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Marfrig.CompraGado.WinForm
@@ -73,6 +68,19 @@ namespace Marfrig.CompraGado.WinForm
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (cmbPecuarista.SelectedValue == null)
+            {
+                MessageBox.Show("Selecione um Pecuarista!");
+                cmbPecuarista.Focus();
+                return;
+            }
+
+            if (dgItens.Rows.Count == 0)
+            {
+                MessageBox.Show("Adicione um Produto!");
+                return;
+            }
+
             this.Close();
         }
 

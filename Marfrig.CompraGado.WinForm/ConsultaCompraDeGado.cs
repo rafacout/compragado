@@ -120,7 +120,10 @@ namespace Marfrig.CompraGado.WinForm
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            EditarCompraDeGado form = new EditarCompraDeGado(new Models.CompraGado() { Id = 0 });
+            EditarCompraDeGado form = new EditarCompraDeGado(new Models.CompraGado() {
+                Id = 0,
+                DataEntrega = DateTime.Now.AddDays(7)
+            });
 
             form.ShowDialog();
         }

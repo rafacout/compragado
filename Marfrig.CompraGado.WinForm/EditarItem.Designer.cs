@@ -76,6 +76,7 @@
             this.cmbProduto.Name = "cmbProduto";
             this.cmbProduto.Size = new System.Drawing.Size(289, 21);
             this.cmbProduto.TabIndex = 3;
+            this.cmbProduto.SelectedValueChanged += new System.EventHandler(this.cmbProduto_SelectedValueChanged);
             // 
             // label2
             // 
@@ -92,6 +93,8 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
             this.txtQuantidade.TabIndex = 5;
+            this.txtQuantidade.Text = "1";
+            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
             // 
             // label3
             // 
